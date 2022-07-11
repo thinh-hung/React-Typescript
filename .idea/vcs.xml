@@ -5,5 +5,6 @@
     <mapping directory="$PROJECT_DIR$/React-Typescript" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/TMA" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/air-viewer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/react-typescript1" vcs="Git" />
   </component>
 </project>
