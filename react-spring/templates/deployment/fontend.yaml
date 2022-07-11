@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-dl
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: react
+  template:
+    metadata:
+      labels:
+        app: react
+    spec:
+      containers:
+        - image: {{ .Values.react.image }}:{{ .Values.version }}
+          name: react
+          ports:
+            - containerPort: 8082
+

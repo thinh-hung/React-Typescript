@@ -1,6 +1,5 @@
 import React, {ChangeEvent, useEffect, useState} from "react";
 import UserService from "../services/user.service";
-import {Link, useParams} from "react-router-dom";
 import PUser from "../types/userprepo";
 import {useHistory} from "react-router";
 interface Props{
@@ -18,13 +17,9 @@ const UpdateUser: React.FC<Props>=(props)=>{
     const history = useHistory();
     const [user, setUser] = useState<PUser>(initialUser);
 
-    // @ts-ignore
-    var role: string =localStorage.getItem("role").substring(1,localStorage.getItem("role").length-1);
-    // @ts-ignore
-    var userName: string = localStorage.getItem("userName").substring(1, localStorage.getItem("userName").length - 1);
     useEffect(()=>{
             loadUserName1();
-    },[0]);
+    },[]);
     const loadUserName1=()=>{
         UserService.getUser(props.name)
             .then((response: any) =>{

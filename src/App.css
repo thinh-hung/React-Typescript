@@ -135,6 +135,11 @@
   font-size: 25px!important;
   text-align: center;
 }
+.ant-descriptions-view table tr th {
+  font-size: 25px!important;
+  font-style: oblique!important;
+}
+
 
 
 

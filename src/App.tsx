@@ -2,13 +2,10 @@ import './App.css';
 import 'antd/dist/antd.min.css';
 import {Switch,Route,Link} from 'react-router-dom';
 import { Avatar, Button, Dropdown, Layout, Menu, Modal} from 'antd';
-import type { CalendarMode } from 'antd/lib/calendar/generateCalendar';
-import type { Moment } from 'moment';
 import React, { useState} from 'react';
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import PutUser from "./components/putUser";
-import UpdateUser from "./components/update.user";
 import Profile from "./components/profile";
 import RoleMod from "./components/role.mod";
 import RoleAdmin from "./components/role.admin";
@@ -16,12 +13,10 @@ import Lognout from "./components/logout";
 import ListUser from "./components/home.component";
 import GetCalendar from "./components/calendar";
 
-import {CalendarOutlined, UserOutlined} from "@ant-design/icons";
+import {CalendarOutlined} from "@ant-design/icons";
 
 const { Header, Content, Sider } = Layout;
 
-
-let ab:number =0;
 
 const App: React.FC = () => {
     const [login, setLogin] = useState(false);
@@ -49,7 +44,7 @@ const App: React.FC = () => {
                     key: '1',
                     label: (
                         <Link to={"/user"}>
-                            personal page
+                            Personal page
                         </Link>
                     ),
                 },
@@ -169,7 +164,7 @@ const App: React.FC = () => {
                             style={{
                                 padding: 24,
                                 margin: 0,
-                                minHeight: 280,
+                                minHeight:  832,
                             }}
                         >
                             <Switch>

@@ -9,8 +9,7 @@ class AuthService {
                 username,
                 password
             })
-            .then(response => {
-                console.log(response.status)
+            .then((response: any) => {
                 if (response.status === 200){
                     localStorage.setItem("token",JSON.stringify(response.data.token))
                     localStorage.setItem("userName",JSON.stringify(response.data.userName))

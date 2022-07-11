@@ -1,17 +1,14 @@
 import React, { useEffect, useState} from "react";
 import UserService from "../services/user.service";
 import PUser from "../types/userprepo";
-import {useHistory} from "react-router";
-import {Link} from "react-router-dom";
 import {Descriptions, Image} from "antd";
 
 
 const Profile: React.FC = () => {
     const [user,setUser] = useState<PUser>();
-    const history = useHistory();
     useEffect(()=>{
         loadUserName();
-    },[]);
+    },);
     const loadUserName=()=>{
         // @ts-ignore
         var name = localStorage.getItem("userName").substring(1, localStorage.getItem("userName").length - 1);
@@ -26,23 +23,16 @@ const Profile: React.FC = () => {
         });
 
     };
-    const logout=()=>{
-        history.push("/login")
-        localStorage.removeItem("token")
-        localStorage.removeItem("userName")
-        localStorage.removeItem("role")
-        alert("Logout Succeess")
-    }
 
 
     return (
         <div>
             <h4 style={{textAlign:"center", fontSize: "35px"}}>Personal Information</h4>
-            <table>
+            <table style={{display: "flex", justifyContent: "center"}}>
                 <tr>
                     <td><Image src={user?.avatar} width={200}/></td>
                     <td>
-                        <Descriptions style={{fontSize: '20px'}} bordered>
+                        <Descriptions style={{fontSize: '40px'}} bordered>
                             <Descriptions.Item label="Name" style={{fontSize: '20px'}}>{user?.username}</Descriptions.Item>
                             <Descriptions.Item label="Email" style={{fontSize: '20px'}}>{user?.email}</Descriptions.Item>
                             <Descriptions.Item label="Phone" style={{fontSize: '20px'}}>{user?.phone}</Descriptions.Item>

@@ -1,0 +1,13 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: air-viewer
+  namespace: air-viewer
+spec:
+  # change this to your DNS
+  host: framgia2c.mylabserver.com
+  routes:
+    - path: /api
+      route: air-viewer/backend-air-viewer
+    - path: /
+      route: air-viewer/frontend-air-viewer

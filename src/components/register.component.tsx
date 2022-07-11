@@ -3,9 +3,8 @@ import IUser from "../types/user.type";
 import AuthService from "../services/auth.service";
 import {useHistory} from "react-router";
 import urlSave from "../../src/img/meo.png";
-import {Link} from "react-router-dom";
-import {Button, message, Upload, UploadProps} from "antd";
-import {LoadingOutlined, PlusOutlined, UploadOutlined} from "@ant-design/icons";
+import { message, Upload, UploadProps} from "antd";
+import {LoadingOutlined, PlusOutlined} from "@ant-design/icons";
 import {RcFile, UploadChangeParam} from "antd/es/upload";
 import {UploadFile} from "antd/es/upload/interface";
 
@@ -62,13 +61,13 @@ const Register: React.FC =()=>{
     };
     console.log(imageUrl)
     AuthService.register(data.username as string,data.email as string,data.password  as string,data.roles  as string,data.departments  as string,data.avatar as string,data.phone as string,data.address as string)
-        .then((response: any) =>{
+        .then(() =>{
                 console.log(data.avatar)
                 history.push("/");
                 window.location.reload();
                 alert("Sign Up Success");
             },
-            error=>{
+            (error)=>{
               const resMessage =
                   (error.response &&
                       error.response.data &&
@@ -215,7 +214,7 @@ const Register: React.FC =()=>{
                   </tr>
                   <tr className="login-tr">
                       <td>
-                          <label htmlFor="`avatar`"> Department </label>
+                          <label htmlFor="`avatar`"> Avatar </label>
                       </td>
                       <td>
                           {/*<input*/}

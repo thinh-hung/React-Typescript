@@ -3,7 +3,7 @@ import PUser from "../types/userprepo";
 import UserService from "../services/user.service";
 import Profile from "./profile";
 import {Link} from "react-router-dom";
-import {useHistory} from "react-router";
+
 
 const RoleAdmin: React.FC = () => {
     const [users, setUsers] = useState<Array<PUser>>([]);

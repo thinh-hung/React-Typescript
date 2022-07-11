@@ -3,14 +3,10 @@ import PUser from "../types/userprepo";
 import UserService from "../services/user.service";
 import {Modal, Table, Tooltip} from "antd";
 import Column from "antd/es/table/Column";
-import {Link} from "react-router-dom";
-import {CloseOutlined, EditFilled, ExclamationCircleOutlined, RetweetOutlined} from "@ant-design/icons";
-import {useHistory} from "react-router";
-import PutUser from "./putUser";
+import {CloseOutlined, EditFilled, ExclamationCircleOutlined} from "@ant-design/icons";
 import UpdateUser from "./update.user";
 
 const ListUser: React.FC = () => {
-    const history = useHistory();
     const [edit, setEdit] = useState(false);
     const [users, setUsers] = useState<Array<PUser>>([]);
     var role: string;
@@ -35,7 +31,7 @@ const ListUser: React.FC = () => {
     useEffect( ()=>{
         listUser();
 
-    },[1]);
+    },[]);
     const listUser = () => {
         var index = 0;
         UserService.getPublicContent()

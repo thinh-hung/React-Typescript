@@ -2,7 +2,6 @@ import React, {ChangeEvent, useEffect, useState} from "react";
 import UserService from "../services/user.service";
 import IUser from "../types/user.type";
 import {useHistory} from "react-router";
-import {Link} from "react-router-dom";
 
 
 
@@ -41,11 +40,11 @@ const PutUser: React.FC=()=>{
         };
         console.log(data)
         UserService.putUser(name,data)
-            .then((response: any) =>{
+            .then(() =>{
                     history.push("/user")
                     window.location.reload()
                 },
-                error=>{
+                (error)=>{
                     const resMessage =
                         (error.response &&
                             error.response.data &&
